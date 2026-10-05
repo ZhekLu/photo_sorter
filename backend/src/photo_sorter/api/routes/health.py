@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from photo_sorter.api.response import HealthResponse
+from photo_sorter.api.schemas.health import HealthResponse
 
 router = APIRouter(
     prefix="/health",
