@@ -1,0 +1,15 @@
+from fastapi.testclient import TestClient
+
+from photo_sorter.main import create_app
+
+
+def test_health() -> None:
+    client = TestClient(create_app())
+
+    response = client.get("/api/health")
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "ok",
+        "service": "photo-sorter",
+    }
